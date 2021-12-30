@@ -21,7 +21,7 @@ def seeder_setup(seeder = Seed):
     directors = Worker.objects.filter(post='Директор')
 
     for director in directors:
-        seeder.add_entity(Worker, 3, {
+        seeder.add_entity(Worker, 5, {
             'full_name': random.choice(names),
             'post': 'Зам. Директора',
             'chief': director
@@ -32,7 +32,7 @@ def seeder_setup(seeder = Seed):
     ex_directors = Worker.objects.filter(post='Зам. Директора')
 
     for ex_director in ex_directors:
-        seeder.add_entity(Worker, 4, {
+        seeder.add_entity(Worker, 5, {
             'full_name': random.choice(names),
             'post': 'Начальник',
             'chief': ex_director
@@ -43,7 +43,7 @@ def seeder_setup(seeder = Seed):
     chiefs = Worker.objects.filter(post='Начальник')
 
     for chief in chiefs:
-        seeder.add_entity(Worker, 5, {
+        seeder.add_entity(Worker, 10, {
             'full_name': random.choice(names),
             'post': 'Старший работник',
             'chief': chief
@@ -55,7 +55,7 @@ def seeder_setup(seeder = Seed):
     older_workers = Worker.objects.filter(post='Старший работник')
 
     for older_worker in older_workers:
-        seeder.add_entity(Worker, 20, {
+        seeder.add_entity(Worker, 100, {
             'full_name': random.choice(names),
             'post': 'Работник',
             'chief': older_worker
